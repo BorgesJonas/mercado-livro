@@ -13,7 +13,7 @@ class CustomerService(
     val bookService: BookService
 ) {
 
-    fun getAllCustomers(name: String?): List<CustomerModel> {
+    fun getCustomers(name: String?): List<CustomerModel> {
         name?.let {
             return customerRepository.findByNameContaining(it)
         }
