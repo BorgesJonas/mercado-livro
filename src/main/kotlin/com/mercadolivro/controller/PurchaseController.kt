@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("purchase")
 class PurchaseController(
-    val purchaseService: PurchaseService,
-    val purchaseMapper: PurchaseMapper
+    private val purchaseService: PurchaseService,
+    private val purchaseMapper: PurchaseMapper
 ) {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

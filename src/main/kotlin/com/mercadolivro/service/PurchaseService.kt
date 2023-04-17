@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service
 
 @Service
 class PurchaseService(
-    val purchaseRepository: PurchaseRepository,
-    val applicationEventPublisher: ApplicationEventPublisher
+    private val purchaseRepository: PurchaseRepository,
+    private val applicationEventPublisher: ApplicationEventPublisher
 ) {
 
     fun createPurchase(purchaseModel: PurchaseModel) {
