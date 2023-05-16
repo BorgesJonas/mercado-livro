@@ -25,11 +25,7 @@ class JwtUtil {
     fun isValidToken(token: String): Boolean {
         val claims = getClaims(token)
 
-        if (claims.subject == null || claims.expiration == null || Date().after(claims.expiration)) {
-            return false
-        }
-
-        return true
+        return !(claims.subject == null || claims.expiration == null || Date().after(claims.expiration))
     }
 
     private fun getClaims(token: String): Claims {
